@@ -1,22 +1,21 @@
-// write cool JS hwere!!
-// --- Opret datastruktur og gem i localStorage (kun første gang) ---
-if (!localStorage.getItem('user1')) {
-  const users = {
-    user1: { name: 'Anna', age: 25, color: '#A3CEF1' }, // lys blå
-    user2: { name: 'Bent', age: 32, color: '#B6E2D3' }, // mint grøn
-    user3: { name: 'Carla', age: 41, color: '#F7D6E0' }, // lys rosa
-    user4: { name: 'Dennis', age: 19, color: '#FFF6D6' }, // lys gul
-  };
-  Object.keys(users).forEach((userKey) => {
-    localStorage.setItem(userKey, JSON.stringify(users[userKey]));
-  });
-}
-// ---
 const userSelect = document.getElementById('userSelect');
 const nameInput = document.getElementById('nameInput');
 const ageInput = document.getElementById('ageInput');
 const colorInput = document.getElementById('colorInput');
 const saveButton = document.getElementById('saveButton');
+
+//  Opret datastruktur og gem i localStorage (kun første gang) ---
+if (!localStorage.getItem('user1')) {
+  const users = {
+    user1: { name: 'Anna', age: 25, color: '#A3CEF1' },
+    user2: { name: 'Bent', age: 32, color: '#B6E2D3' },
+    user3: { name: 'Carla', age: 41, color: '#F7D6E0' },
+    user4: { name: 'Dennis', age: 19, color: '#FFF6D6' },
+  };
+  Object.keys(users).forEach((userKey) => {
+    localStorage.setItem(userKey, JSON.stringify(users[userKey]));
+  });
+}
 
 // Event listener: vis data for valgt bruger
 function userSelectChange() {
@@ -29,10 +28,13 @@ function userSelectChange() {
     nameInput.value = user.name;
     ageInput.value = user.age;
     colorInput.value = user.color;
+
     // Skift baggrundsfarve til den valgte brugers farve
     document.body.style.backgroundColor = user.color;
+
     // Skift tekstfarve afhængigt af baggrundsfarve
     setTextColorBasedOnBg(user.color);
+
     // Funktion til at vælge sort/hvid tekst afhængigt af baggrundsfarve
     function setTextColorBasedOnBg(bgColor) {
       // Fjern evt. # hvis den findes

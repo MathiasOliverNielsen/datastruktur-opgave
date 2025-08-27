@@ -111,7 +111,7 @@ input,
 select,
 button {
   width: 100%;
-  padding: 8px 12px;
+  /* padding: 8px 12px; */
   margin-bottom: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -131,6 +131,55 @@ button {
   color: #fff;
   font-weight: bold;
   border: none;
+  /* Color palette for more color choices */
+  .color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+
+  .color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 4px solid #eee;
+    cursor: pointer;
+    transition: border 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .color-swatch.selected {
+    border: 4px solid #fda085;
+    transform: scale(1.1);
+  }
+
+  /* Example colors, add more as needed */
+  .color-swatch[data-color="#fda085"] {
+    background: #fda085;
+  }
+  .color-swatch[data-color="#f6d365"] {
+    background: #f6d365;
+  }
+  .color-swatch[data-color="#222"] {
+    background: #222;
+  }
+  .color-swatch[data-color="#fff"] {
+    background: #fff;
+  }
+  .color-swatch[data-color="#333"] {
+    background: #333;
+  }
+  .color-swatch[data-color="#555"] {
+    background: #555;
+  }
+  .color-swatch[data-color="#fafafa"] {
+    background: #fafafa;
+  }
+  .color-swatch[data-color="#eee"] {
+    background: #eee;
+  }
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
 }
