@@ -2,10 +2,10 @@
 // --- Opret datastruktur og gem i localStorage (kun første gang) ---
 if (!localStorage.getItem('user1')) {
   const users = {
-    user1: { name: 'Anna', age: 25, color: '#ff0000' },
-    user2: { name: 'Bent', age: 32, color: '#00ff00' },
-    user3: { name: 'Carla', age: 41, color: '#0000ff' },
-    user4: { name: 'Dennis', age: 19, color: '#ffff00' },
+    user1: { name: 'Anna', age: 25, color: '#A3CEF1' }, // lys blå
+    user2: { name: 'Bent', age: 32, color: '#B6E2D3' }, // mint grøn
+    user3: { name: 'Carla', age: 41, color: '#F7D6E0' }, // lys rosa
+    user4: { name: 'Dennis', age: 19, color: '#FFF6D6' }, // lys gul
   };
   Object.keys(users).forEach((userKey) => {
     localStorage.setItem(userKey, JSON.stringify(users[userKey]));
