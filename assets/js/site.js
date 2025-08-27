@@ -7,7 +7,9 @@ if (!localStorage.getItem('user1')) {
     user3: { name: 'Carla', age: 41, color: '#0000ff' },
     user4: { name: 'Dennis', age: 19, color: '#ffff00' },
   };
-  localStorage.setItem('users', JSON.stringify(users));
+  Object.keys(users).forEach((userKey) => {
+    localStorage.setItem(userKey, JSON.stringify(users[userKey]));
+  });
 }
 // ---
 const userSelect = document.getElementById('userSelect');
