@@ -53,6 +53,7 @@ function userSelectChange() {
     ageInput.value = '';
     colorInput.value = '';
     document.body.style.backgroundColor = '';
+    document.body.style.color = '#222'; // sort tekst som default
   }
 }
 
